@@ -1,31 +1,134 @@
 {
-  "updated_at": "2026-01-18T18:00:00Z",
   "games": [
     {
-      "id": "flamengo-palmeiras-2026-01-18",
-      "competition": "Brasileirão Série A",
-      "round": "Rodada 3",
-
-      "teams": {
-        "home": "Flamengo",
-        "away": "Palmeiras"
-      },
-
+      "id": "besiktas-kayserispor",
+      "competition": "Campeonato Turco",
+      "round": "18ª Rodada",
+      "teams": { "home": "Besiktas", "away": "Kayserispor" },
       "schedule": {
-        "date": "2026-01-18",
-        "time": "21:30",
+        "date": "2026-01-19",
+        "time": "14:00",
         "timezone": "America/Sao_Paulo"
       },
-
-      "status": "scheduled",
-
       "broadcast": [
-        { "name": "Globo", "type": "tv" },
-        {
-          "name": "Globoplay",
-          "type": "stream",
-          "url": "https://globoplay.globo.com/"
-        }
+        { "name": "Disney+", "type": "stream" }
+      ]
+    },
+    {
+      "id": "cremonese-hellas-verona",
+      "competition": "Campeonato Italiano",
+      "round": "21ª Rodada",
+      "teams": { "home": "Cremonese", "away": "Hellas Verona" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "14:30",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "Disney+", "type": "stream" }
+      ]
+    },
+    {
+      "id": "lazio-como",
+      "competition": "Campeonato Italiano",
+      "round": "21ª Rodada",
+      "teams": { "home": "Lazio", "away": "Como" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "16:45",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "XSports", "type": "tv" },
+        { "name": "Disney+", "type": "stream" }
+      ]
+    },
+    {
+      "id": "brighton-bournemouth",
+      "competition": "Campeonato Inglês",
+      "round": "22ª Rodada",
+      "teams": { "home": "Brighton", "away": "Bournemouth" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "17:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "ESPN", "type": "tv" },
+        { "name": "Disney+", "type": "stream" }
+      ]
+    },
+    {
+      "id": "elche-sevilla",
+      "competition": "Campeonato Espanhol",
+      "round": "20ª Rodada",
+      "teams": { "home": "Elche", "away": "Sevilla" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "17:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "ESPN 4", "type": "tv" },
+        { "name": "Disney+", "type": "stream" }
+      ]
+    },
+    {
+      "id": "estrela-amadora-estoril",
+      "competition": "Campeonato Português",
+      "round": "18ª Rodada",
+      "teams": { "home": "Estrela Amadora", "away": "Estoril" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "17:15",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "Disney+", "type": "stream" }
+      ]
+    },
+    {
+      "id": "palmeiras-ibrachina-sub20",
+      "competition": "Copa SP de Futebol Júnior",
+      "round": "Quartas de final",
+      "teams": { "home": "Palmeiras", "away": "Ibrachina" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "18:30",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "YouTube (CazéTV)", "type": "stream" }
+      ]
+    },
+    {
+      "id": "criciuma-concordia",
+      "competition": "Campeonato Catarinense",
+      "round": "1ª Fase - 4ª Rodada",
+      "teams": { "home": "Criciúma", "away": "Concórdia" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "19:30",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "SportyNet", "type": "tv" },
+        { "name": "YouTube (SportyNet)", "type": "stream" }
+      ]
+    },
+    {
+      "id": "sao-paulo-botafogo-sub20",
+      "competition": "Copa SP de Futebol Júnior",
+      "round": "Quartas de final",
+      "teams": { "home": "São Paulo", "away": "Botafogo" },
+      "schedule": {
+        "date": "2026-01-19",
+        "time": "21:00",
+        "timezone": "America/Sao_Paulo"
+      },
+      "broadcast": [
+        { "name": "XSports", "type": "tv" },
+        { "name": "YouTube (XSports)", "type": "stream" }
       ]
     }
   ]
