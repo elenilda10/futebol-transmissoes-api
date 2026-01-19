@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-01-18T18:00:00Z",
+  "games": [
+    {
+      "id": "flamengo-palmeiras-2026-01-18",
+      "competition": "Brasileirão Série A",
+      "round": "Rodada 3",
+
+      "teams": {
+        "home": "Flamengo",
+        "away": "Palmeiras"
+      },
+
+      "schedule": {
+        "date": "2026-01-18",
+        "time": "21:30",
+        "timezone": "America/Sao_Paulo"
+      },
+
+      "status": "scheduled",
+
+      "broadcast": [
+        { "name": "Globo", "type": "tv" },
+        {
+          "name": "Globoplay",
+          "type": "stream",
+          "url": "https://globoplay.globo.com/"
+        }
+      ]
+    }
+  ]
+}
