@@ -1,38 +1,32 @@
-import data from "../../data/games.json";
+import { fetchJogosLive } from "../lib/scraper";
 
-const GAME_DURATION_MINUTES = 120;
+export default async function handler(req, res) {
+  try {
+    const jogos = await fetchJogosLive();
 
-export default function handler(req, res) {
-  const now = new Date();
-
-  const games = data.games.map(game => {
-    const start = new Date(
-      `${game.schedule.date}T${game.schedule.time}:00`
-    );
-
-    const end = new Date(
-      start.getTime() + GAME_DURATION_MINUTES * 60000
-    );
-
-    let status = "scheduled";
-
-    if (now >= start && now <= end) {
-      status = "live";
-    } else if (now > end) {
-      status = "finished";
+    // Garantia absoluta de retorno válido
+    if (!Array.isArray(jogos)) {
+      return res.status(200).json({
+        live: true,
+        total: 0,
+        jogos: []
+      });
     }
 
-    return {
-      ...game,
-      status
-    };
-  });
+    return res.status(200).json({
+      live: true,
+      total: jogos.length,
+      jogos
+    });
 
-  const liveGames = games.filter(g => g.status === "live");
+  } catch (error) {
+    console.error("Erro /api/live:", error);
 
-  res.status(200).json({
-    ok: true,
-    time_now: now.toISOString(),
-    games: liveGames
-  });
+    return res.status(500).json({
+      live: true,
+      total: 0,
+      jogos: [],
+      error: "Erro interno ao buscar jogos ao vivo"
+    });
+  }
 }
