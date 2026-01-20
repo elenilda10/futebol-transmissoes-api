@@ -1,31 +1,26 @@
-import data from "../../data/games.json";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import { fetchJogosPorData } from "../../lib/scraper"; // ajuste o path conforme o seu projeto
 
-const GAME_DURATION_MINUTES = 120;
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
-export default function handler(req, res) {
-  const today = new Date().toISOString().slice(0, 10);
-  const now = new Date();
+export default async function handler(req, res) {
+  try {
+    const hoje = dayjs().tz("America/Sao_Paulo").format("YYYY-MM-DD");
+    
+    // chama a função que faz scraping por data
+    const jogos = await fetchJogosPorData(hoje);
 
-  const gamesToday = data.games
-    .filter(g => g.schedule.date === today)
-    .map(game => {
-      const start = new Date(
-        `${game.schedule.date}T${game.schedule.time}:00`
-      );
-      const end = new Date(
-        start.getTime() + GAME_DURATION_MINUTES * 60000
-      );
+    // validação de retorno
+    if (!Array.isArray(jogos) || jogos.length === 0) {
+      return res.status(200).json({ jogos: [], message: "Nenhum jogo encontrado" });
+    }
 
-      let status = "scheduled";
-      if (now >= start && now <= end) status = "live";
-      else if (now > end) status = "finished";
-
-      return { ...game, status };
-    });
-
-  res.status(200).json({
-    ok: true,
-    date: today,
-    games: gamesToday
-  });
+    return res.status(200).json({ jogos });
+  } catch (error) {
+    console.error("Erro na API /today:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
 }
